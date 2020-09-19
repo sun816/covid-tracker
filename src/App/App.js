@@ -47,8 +47,6 @@ const App = () => {
 		getCountriesData();
 	}, []);
 
-	console.log(casesType);
-
 	const onCountryChange = async e => {
 		const countryCode = e.target.value;
 
@@ -75,7 +73,9 @@ const App = () => {
 						<Select variant='outlined' value={country} onChange={onCountryChange}>
 							<MenuItem value='worldwide'>Worldwide</MenuItem>
 							{countries.map(country => (
-								<MenuItem value={country.value}>{country.name}</MenuItem>
+								<MenuItem value={country.value} key={country.name}>
+									{country.name}
+								</MenuItem>
 							))}
 						</Select>
 					</FormControl>
@@ -107,11 +107,13 @@ const App = () => {
 				</div>
 				<Map countries={mapCountries} casesType={casesType} center={mapCenter} zoom={mapZoom} />
 			</div>
+
 			<Card className='app__right'>
 				<CardContent>
 					<div className='app__information'>
 						<h3>Live Cases by Country</h3>
 						<Table countries={tableData} />
+
 						<h3>Worldwide new {casesType}</h3>
 						<LineGraph casesType={casesType} />
 					</div>

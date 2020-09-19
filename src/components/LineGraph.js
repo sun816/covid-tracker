@@ -75,7 +75,6 @@ const LineGraph = ({ casesType }) => {
 				.then(data => {
 					let chartData = buildChartData(data, casesType);
 					setData(chartData);
-					console.log(chartData);
 					// buildChart(chartData);
 				});
 		};
@@ -84,7 +83,7 @@ const LineGraph = ({ casesType }) => {
 	}, [casesType]);
 
 	return (
-		<div>
+		<div style={{ flexGrow: 1 }}>
 			{data?.length > 0 && (
 				<Line
 					data={{
