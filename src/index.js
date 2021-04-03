@@ -11,4 +11,4 @@ if (module.hot) {
 	module.hot.accept();
 }
 
-serviceWorker.register();
+serviceWorker.unregister();
