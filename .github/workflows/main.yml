@@ -1,6 +1,4 @@
-# This  workflow Action to trigger covid1 verc 
-
- name: Trigger deployment
+name: Trigger deployment
 on:
   schedule:
     - cron: "0 */4 * * *"
