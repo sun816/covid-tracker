@@ -1,0 +1,14 @@
+# This  workflow Action to trigger covid1 verc 
+
+ name: Trigger deployment
+on:
+  schedule:
+    - cron: "0 */4 * * *"
+
+jobs:
+  build:
+    name: Trigger deployment
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger webhook
+        run: curl https://api.vercel.com/v1/integrations/deploy/prj_eCbFfaCOTKawSUcCMrseH03qXZE8/ekhK030qkQ
